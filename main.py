@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from routes.translation import router as translation_router
 from routes.image_generation import router as image_generation_router
+from routes.speech import router as speech_router
 from routes.ner import router as ner_router
 import uvicorn
 from dotenv import load_dotenv
@@ -11,6 +12,7 @@ app = FastAPI()
 app.include_router(translation_router)
 app.include_router(image_generation_router)
 app.include_router(ner_router)
+app.include_router(speech_router)
 
 
 @app.get("/")
